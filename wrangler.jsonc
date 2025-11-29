@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "cnstockanalysis",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "cn_stock",
+          "database_id": "88a6a048-25e3-45ea-95a7-96b93dd578d1"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "8abd43410d3e485f8ffce614305758e2",
+            "binding": "SECRET",
+            "secret_name": "cn_stock"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
